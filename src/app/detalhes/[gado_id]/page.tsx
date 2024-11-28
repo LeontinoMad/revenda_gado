@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import { GadoI } from "@/utils/types/gados";
 import { useClienteStore } from "@/context/cliente";
 import { useForm } from "react-hook-form";
-import CustomAlert from "@/components/CustomAlert"; // Ajuste o caminho conforme necessário
-import Image from "next/image";
+import CustomAlert from "@/components/CustomAlert";
+//import Image from "next/image";
 
 type Inputs = {
   descricao: string;
@@ -82,11 +82,11 @@ export default function Detalhes() {
         />
       )}
       <section className="flex flex-col md:flex-row items-center bg-white border border-gray-200 rounded-lg shadow md:max-w-5xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-auto">
-        <Image
+        {/* <Image
           className="object-cover w-full h-96 md:h-auto md:w-2/4 rounded-t-lg md:rounded-none md:rounded-l-lg"
-          src={gado?.foto}
+          src={gado?.foto }
           alt="Foto Gado."
-        />
+        /> */}
         <div className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {gado?.tipo} {gado?.racas.nome}
