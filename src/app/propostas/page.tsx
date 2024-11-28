@@ -3,6 +3,7 @@ import "./page.css";
 import { useEffect, useState } from "react";
 import { useClienteStore } from "@/context/cliente";
 import { PropostaI } from "@/utils/types/propostas";
+import Image from "next/image";
 
 export default function Propostas() {
   const [propostas, setPropostas] = useState<PropostaI[]>([]);
@@ -17,7 +18,7 @@ export default function Propostas() {
       setPropostas(dados);
     }
     buscaDados();
-  }, []);
+  }, [cliente.id]);
 
   // Função para formatar a data no formato DD/MM/AAAA
   function dataDMA(data: string) {
@@ -40,7 +41,11 @@ export default function Propostas() {
         {proposta.gado.tipo}
       </th>
       <td className="px-6 py-4">
-        <img src={proposta.gado.foto} className="w-32 h-auto" alt="foto gado" />{" "}
+        <Image
+          src={proposta.gado.foto}
+          className="w-32 h-auto"
+          alt="foto gado"
+        />{" "}
         {/* Ajuste apenas a largura */}
       </td>
 

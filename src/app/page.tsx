@@ -36,7 +36,7 @@ export default function Home() {
       setGados(dados);
     }
     buscaDados();
-  }, []);
+  }, [logaCliente]);
 
   const listaGado = gados.map((gado) => (
     <ItemGados data={gado} key={gado.id} />

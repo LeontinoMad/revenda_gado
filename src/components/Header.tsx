@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useClienteStore } from "@/context/cliente";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function Header() {
   const { cliente, deslogaCliente } = useClienteStore();
@@ -23,7 +24,7 @@ export function Header() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse  ml-20"
         >
-          <img src="/gado.webp" className="h-16" alt="Logo" />
+          <Image src="/gado.webp" className="h-16" alt="Logo" />
           <span className="mr-11 text-4xl font-bold text-black whitespace-nowrap ">
             Revenda de Gado Biduca
           </span>

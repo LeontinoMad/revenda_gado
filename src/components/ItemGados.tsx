@@ -1,12 +1,13 @@
 import { GadoI } from "../utils/types/gados";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export function ItemGados({ data }: { data: GadoI }) {
   return (
     <div className="max-w-lg mx-auto p-4 ml-4 mr-4 bg-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <Link href={`/detalhes/${data.id}`}>
-        <img
+        <Image
           className="w-full h-48 object-cover rounded-t-lg" // Reduzindo a altura para 48
           src={data.foto}
           alt={`Imagem ${data.tipo}`}
