@@ -1,6 +1,8 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import NovaSenha from "./newPassword";
 
 
 type inputs = {
@@ -8,13 +10,20 @@ type inputs = {
   senha: string;
   manter: boolean;
 };
-export let emailValido = ""
 
-export default function EmailChange() {
+type novaSenhaProps = {
+  emailValido?: string
+ }
+ 
 
-  const { register, handleSubmit } = useForm<inputs>();
-  const router = useRouter();
+ export default function EmailChange() {
 
+   let emailValido
+   const { register, handleSubmit } = useForm<inputs>();
+   const router = useRouter();
+   const [etapa, setEtapa] = useState<string>("email")
+   
+    
   
   async function verificaEmail(data: inputs) {
     console.log(data.email);
@@ -32,8 +41,9 @@ export default function EmailChange() {
     if (response.status == 200) {
       const dados = await response.json();
       console.log("Email encontrado");
-      router.push("/redefinir-senha/codigo");
       emailValido = data.email
+      setEtapa("novaSenha")
+      // router.push("/redefinir-senha/codigo");
     } else {
       alert("Erro, e-mail não cadastrado.");
     }
@@ -52,6 +62,8 @@ export default function EmailChange() {
         <div className="flex flex-col items-center justify-center px-2 py-2 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                  
+              { etapa === "email" ? (    
                 <>
                   <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Redefinição de Senha
@@ -93,7 +105,10 @@ export default function EmailChange() {
                       </a>
                     </p>
                   </form>
-                </>
+                </> ) : etapa === "novaSenha" ? (
+                  <NovaSenha emailValido={emailValido || ""} />
+                ): null } 
+                
             </div>
           </div>
         </div>

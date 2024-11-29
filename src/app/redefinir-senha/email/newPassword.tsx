@@ -1,14 +1,19 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { emailValido } from "../email/page";
+
+
+type novaSenhaProps= {
+  emailValido?: string;
+};
 
 type inputs = {
   confirmarSenha: string;
   senha: string;
 };
 
-export default function NovaSenha() {
+
+export default function NovaSenha({emailValido}: novaSenhaProps) {
   const { register, handleSubmit } = useForm<inputs>();
   const router = useRouter();
 
