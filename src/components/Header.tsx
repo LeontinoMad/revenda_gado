@@ -28,8 +28,8 @@ export function Header() {
             src="/gado.webp"
             className="h-16"
             alt="Logo "
-            width={300}
-            height={180}
+            width={80}
+            height={50}
           />
           <span className="mr-11 text-4xl font-bold text-black whitespace-nowrap ">
             Revenda de Gado Biduca
