@@ -24,7 +24,13 @@ export function Header() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse  ml-20"
         >
-          <Image src="/gado.webp" className="h-16" alt="Logo" />
+          <Image
+            src="/gado.webp"
+            className="h-16"
+            alt="Logo "
+            width={300}
+            height={180}
+          />
           <span className="mr-11 text-4xl font-bold text-black whitespace-nowrap ">
             Revenda de Gado Biduca
           </span>
