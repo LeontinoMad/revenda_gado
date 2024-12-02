@@ -11,6 +11,9 @@ export function ItemGados({ data }: { data: GadoI }) {
           className="w-full h-48 object-cover rounded-t-lg" // Reduzindo a altura para 48
           src={data.foto}
           alt={`Imagem ${data.tipo}`}
+          width={500} // Substitua pelo tamanho desejado
+          height={300} // Substitua pelo tamanho desejado
+          objectFit="cover"
         />
       </Link>
 
