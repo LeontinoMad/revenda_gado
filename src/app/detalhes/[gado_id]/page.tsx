@@ -84,7 +84,7 @@ export default function Detalhes() {
       <section className="flex flex-col md:flex-row items-center bg-white border border-gray-200 rounded-lg shadow md:max-w-5xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mx-auto">
         <Image
           className="object-cover w-full h-96 md:h-auto md:w-2/4 rounded-t-lg md:rounded-none md:rounded-l-lg"
-          src={gado?.foto as string}
+          src={gado?.foto || "/default-image.jpg"}
           alt="Foto Gado."
         />
         <div className="flex flex-col justify-between p-4 leading-normal">
