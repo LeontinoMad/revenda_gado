@@ -45,6 +45,8 @@ export default function Propostas() {
           src={proposta.gado.foto}
           className="w-32 h-auto"
           alt="foto gado"
+          width={50} // Ajuste conforme a necessidade
+          height={40} // Ajuste conforme a necessidade
         />{" "}
         {/* Ajuste apenas a largura */}
       </td>
