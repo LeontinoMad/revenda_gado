@@ -86,8 +86,8 @@ export default function Detalhes() {
           className="object-cover w-full h-96 md:h-auto md:w-2/4 rounded-t-lg md:rounded-none md:rounded-l-lg"
           src={gado?.foto || "/default-image.jpg"}
           alt="Foto Gado."
-          width={500} // Ajuste conforme a necessidade
-          height={400} // Ajuste conforme a necessidade
+          width={500}
+          height={400}
         />
         <div className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

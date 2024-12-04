@@ -77,11 +77,11 @@ export default function Propostas() {
   ));
 
   return (
-    <section className="max-w-7xl mx-auto">
-      <main
-        className="min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/fundo.jpeg")' }}
-      >
+    <main
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url("/fundo.jpeg")' }}
+    >
+      <section className="max-w-7xl mx-auto">
         {/* Conteúdo da página abaixo do cabeçalho */}
         <div className="py-12 flex flex-col items-center text-center">
           {/* Adiciona espaçamento abaixo do cabeçalho */}
@@ -117,7 +117,7 @@ export default function Propostas() {
             <tbody>{propostasTable}</tbody>
           </table>
         </div>
-      </main>
-    </section>
+      </section>
+    </main>
   );
 }
